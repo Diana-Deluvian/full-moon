@@ -1,13 +1,33 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LandingPage from '../LandingPage';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import Loader from '../sharedComponents/Loader';
+
+import Login from '../components/Login';
+
+import PrivateRoute from './PrivateRoute';
+import LandingPage from '../components/LandingPage';
+import Home from '../components/Home';
+
 const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route exact path='/' element={<LandingPage />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/login' element={<Login />} />
+        <Route
+          path='/private'
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 
