@@ -1,15 +1,12 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Loader from '../sharedComponents/Loader';
 
+import PrivateRoute from './PrivateRoute';
+
+import LandingPage from '../components/LandingPage';
 import Login from '../components/Login';
 
-import PrivateRoute from './PrivateRoute';
-import LandingPage from '../components/LandingPage';
 import Home from '../components/Home';
 
 const AppRouter = () => {
