@@ -28,7 +28,8 @@ export const register = createAsyncThunk(
 export const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    isAuth: localStorage.getItem('fullMoonAuthToken') ? true : false,
+    //for testing purposes, fix this later
+    isAuth: localStorage.getItem('fullMoonAuthToken') ? true : true,
     hasError: false,
     token: localStorage.getItem('fullMoonAuthToken') || '',
     errorMsg: '',
